@@ -1,1 +1,103 @@
-My GitHub Page
+<!DOCTYPE html>
+<meta chaset="utf-8">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #first-screen {
+    text-align: center;
+    vertical-align: middle;
+    background-color: red;
+  }
+
+  #second-screen {
+    text-align: center;
+    vertical-align: middle;
+    background-color: green;
+  }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="jquery.uscrollr.js"></script>
+<script>
+  $(function() {
+    function valign($elem) {
+      $elem.parent().css('position', 'relative');
+      $elem.css({
+        width: '100%',
+        position: 'absolute',
+        top: ($elem.parent().height() - $elem.height())/2
+      });
+    };
+    $('#first-screen').css('height', $(window).height());
+    $('#second-screen').css('height', $(window).height());
+    valign($('#first-screen h1'));
+  });
+/*
+p
+(function($) {
+  function init() {
+    // Svenska
+    $('.node-22 .field-name-destination-image .field-item:eq(0)').pScroller({
+      max : 613,
+      pre : 50,
+      post : 50
+    });
+    $('.node-23 .field-name-destination-image .field-item:eq(0)').pScroller({
+      max : 613,
+      dir : 'left',
+      pre : 50,
+      post : 50
+    });
+    $('.field-name-field-destination-flying-images .field-items').css('height', 321).pScroller({
+      max : 1000,
+      callback : 'flyin',
+      pre : 321
+    });
+    $('.node-24 .field-name-destination-image .field-item:eq(0)').pScroller({
+      max : 613,
+      pre : 321
+    });
+    
+    // Danska
+    $('.node-77 .field-name-destination-image .field-item:eq(0)').pScroller({
+       max : 613,
+       pre : 50,
+       post : 50
+     });
+  };
+  $(function() {
+    init(); 
+  });
+})(jQuery);
+  var animate_functions = {
+    scroll : animate_scroll,
+    flyin : animate_flyin
+  };
+  function animate_scroll($elem, offset, opts) {
+    var pos = opts.max * offset;
+    if(opts.dir == 'left')
+      pos *= -1;      
+    $elem.find('.destination-image-content').css('background-position', pos.toString() + 'px 0px');
+    $elem.find('.waves-top').css('background-position', (-0.5 * pos).toString() + 'px 0px');
+    $elem.find('.waves-bottom').css('background-position', (0.5 * pos).toString() + 'px bottom');
+  };
+  function animate_flyin($elem, offset, opts) {
+    $elem.find('> div').each(function(i) {
+      if(!$(this).data('origl'))
+        $(this).data('origl', $(this).position().left);
+      var new_l = $(this).data('origl') + (1 - offset) * (opts.max * (i + 1));
+      $(this).css('left', new_l);
+    });
+  };
+  */
+</script>
+
+<div id="first-screen"><h1>Welcome to the jQuery UScollr Demo</h1></div>
+<div id="second-screen">
+  <div id="a">This is a text</div>
+  <div id="b">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis.</div>
+</div>
+<div id="third-screen"></div>
+

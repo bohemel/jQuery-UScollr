@@ -1,8 +1,8 @@
 /**
  * jQuery UScollr 
- * by Joel Söderberg <joel@joelsoderberg.se>
+ * by Joel Söderberg <joel@understandit.se>
  * 
- * Copyright (c) 2012, Joel Söderberg
+ * Copyright (c) 2012 Joel Söderberg, Understandit AB
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, 

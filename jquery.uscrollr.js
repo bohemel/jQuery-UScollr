@@ -28,14 +28,14 @@
  */
 
 (function($) {
-  $.fn.pScroller = function(o) {
+  $.fn.uScrollr = function(o) {
     if( this.size() === 0)
       return;
     o = o || {};
     var opts = {
       pre : o.pre || 0,
       post : o.post || 0,
-      callback : callback || function() {}
+      callback : o.callback || function() {}
     };
     var $elem = this;
     var position = 'unknown';
@@ -64,9 +64,10 @@
         if(position === 'above')
           opts.callback($elem, 0, opts);
         else if(position === 'below')
-          opts.callback($elem, 1, o);        
+          opts.callback($elem, 1, opts);        
       }
     });
+    $(window).scroll();
   };
 })(jQuery);
 
